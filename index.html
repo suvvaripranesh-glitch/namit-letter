@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter from the Future — To Namit Malhotra</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #8a6f33;
+    --ink: #1a1208;
+    --paper: #fdf8ef;
+    --paper-mid: #f5edd8;
+    --paper-dark: #e8d9b8;
+    --red-seal: #8b1a1a;
+    --red-seal-light: #c0392b;
+    --muted: #5c4a2a;
+    --rule: rgba(180, 140, 60, 0.35);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #1a1208;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(60, 40, 10, 0.8) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(40, 25, 8, 0.8) 0%, transparent 60%);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 48px 20px 80px;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+
+  .outer-wrapper {
+    max-width: 760px;
+    width: 100%;
+  }
+
+  /* Header above letter */
+  .from-universe {
+    text-align: center;
+    margin-bottom: 32px;
+    animation: fadeDown 1.2s ease forwards;
+  }
+  .from-universe .overline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .from-universe .headline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* The parchment letter */
+  .letter {
+    background: var(--paper);
+    background-image: 
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"),
+      linear-gradient(180deg, #fdf8ef 0%, #f9f1e0 40%, #f5ead4 100%);
+    border: 1px solid var(--paper-dark);
+    box-shadow:
+      0 0 0 1px rgba(180, 140, 60, 0.15),
+      0 0 40px rgba(0,0,0,0.6),
+      0 0 100px rgba(0,0,0,0.4),
+      inset 0 0 60px rgba(200, 160, 80, 0.06);
+    padding: 60px 64px 72px;
+    position: relative;
+    animation: fadeUp 1.4s ease forwards;
+  }
+
+  /* Decorative corner ornaments */
+  .letter::before, .letter::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M2 2 L20 2 L2 20 Z' fill='none' stroke='%23c9a84c' stroke-width='0.8' opacity='0.5'/%3E%3Cpath d='M2 2 L8 2 L2 8 Z' fill='%23c9a84c' opacity='0.25'/%3E%3Cpath d='M12 2 L14 2' stroke='%23c9a84c' stroke-width='0.6' opacity='0.4'/%3E%3Cpath d='M2 12 L2 14' stroke='%23c9a84c' stroke-width='0.6' opacity='0.4'/%3E%3C/svg%3E");
+    background-size: cover;
+  }
+  .letter::before { top: 16px; left: 16px; }
+  .letter::after { 
+    bottom: 16px; right: 16px; 
+    transform: rotate(180deg);
+  }
+  .corner-br {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M2 2 L20 2 L2 20 Z' fill='none' stroke='%23c9a84c' stroke-width='0.8' opacity='0.5'/%3E%3Cpath d='M2 2 L8 2 L2 8 Z' fill='%23c9a84c' opacity='0.25'/%3E%3C/svg%3E");
+    background-size: cover;
+    transform: rotate(270deg);
+  }
+  .corner-tr {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M2 2 L20 2 L2 20 Z' fill='none' stroke='%23c9a84c' stroke-width='0.8' opacity='0.5'/%3E%3Cpath d='M2 2 L8 2 L2 8 Z' fill='%23c9a84c' opacity='0.25'/%3E%3C/svg%3E");
+    background-size: cover;
+    transform: rotate(90deg);
+  }
+
+  /* Gold horizontal rule */
+  .gold-rule {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+    margin: 28px 0;
+    opacity: 0.6;
+  }
+  .gold-rule-thin {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(180,140,60,0.3), rgba(180,140,60,0.5), rgba(180,140,60,0.3), transparent);
+    margin: 20px 0;
+  }
+
+  /* Masthead / institution seal area */
+  .masthead {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .seal-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    position: relative;
+  }
+  .seal-ring::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(180,140,60,0.3);
+  }
+  .seal-inner {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--gold-dim);
+    line-height: 1.1;
+    text-align: center;
+  }
+  .institution {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 6px;
+  }
+  .institution-full {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .institution-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* Date line */
+  .dateline {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  /* Salutation */
+  .salutation {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  /* Body text */
+  .body-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 17.5px;
+    line-height: 1.85;
+    color: #2a1f0e;
+    margin-bottom: 20px;
+  }
+  .body-text + .body-text {
+    text-indent: 2em;
+  }
+
+  /* Pull quote / headline block */
+  .headline-clipping {
+    margin: 36px 0;
+    padding: 20px 28px;
+    border-left: 2.5px solid var(--gold);
+    background: linear-gradient(90deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+    position: relative;
+  }
+  .clipping-source {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .clipping-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .clipping-dek {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* Quote block */
+  .pull-quote {
+    margin: 36px 8px;
+    text-align: center;
+    position: relative;
+  }
+  .pull-quote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: rgba(201,168,76,0.2);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    line-height: 1;
+  }
+  .pull-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    font-style: normal;
+  }
+
+  /* Newspaper clipping grid */
+  .clippings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .mini-clipping {
+    padding: 16px 18px;
+    border: 0.5px solid var(--paper-dark);
+    background: rgba(245,237,216,0.5);
+    position: relative;
+  }
+  .mini-clipping::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+  .mini-pub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 8.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .mini-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+  .mini-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* Section header */
+  .section-marker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 36px 0 20px;
+  }
+  .section-marker span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    white-space: nowrap;
+  }
+  .section-marker::before, .section-marker::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    opacity: 0.5;
+  }
+
+  /* Closing */
+  .closing-line {
+    font-family: 'EB Garamond', serif;
+    font-size: 17.5px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .signature-block {
+    margin-top: 32px;
+  }
+  .signature-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .signature-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Red wax seal */
+  .wax-seal-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+  .wax-seal {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #c0392b, #7b1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+      inset 0 2px 6px rgba(255,255,255,0.15),
+      inset 0 -2px 6px rgba(0,0,0,0.3),
+      0 3px 12px rgba(0,0,0,0.3);
+    position: relative;
+    transform: rotate(-8deg);
+  }
+  .wax-seal::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .wax-seal-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  /* Footnote */
+  .footnote {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 0.5px solid var(--rule);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    opacity: 0.6;
+  }
+
+  /* Highlight / emphasis inline */
+  .em-gold {
+    color: var(--gold-dim);
+    font-style: italic;
+  }
+  .em-bold {
+    font-weight: 500;
+  }
+
+  /* Drop cap on first paragraph */
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 68px;
+    font-weight: 700;
+    float: left;
+    line-height: 0.75;
+    margin-right: 8px;
+    margin-top: 8px;
+    color: var(--gold-dim);
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .letter { padding: 40px 28px 52px; }
+    .clippings-grid { grid-template-columns: 1fr; }
+    .pull-quote blockquote { padding: 0 20px; font-size: 17px; }
+    .signature-name { font-size: 26px; }
+    body { padding: 24px 12px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="outer-wrapper">
+
+  <div class="from-universe">
+    <p class="overline">A Gift from the Future</p>
+    <p class="headline">A Letter from the Global Entertainment Industry</p>
+  </div>
+
+  <div class="letter">
+    <div class="corner-tr"></div>
+    <div class="corner-br"></div>
+
+    <!-- Masthead -->
+    <div class="masthead">
+      <div class="seal-ring">
+        <div class="seal-inner">✦<br>GEI</div>
+      </div>
+      <p class="institution">The Global Entertainment Industry</p>
+      <p class="institution-full">In Honour of Namit Malhotra</p>
+      <p class="institution-sub">Architect of Tomorrow's Cinema</p>
+    </div>
+
+    <hr class="gold-rule">
+
+    <p class="dateline">Somewhere in the Future &nbsp;·&nbsp; April 2, 2043</p>
+
+    <hr class="gold-rule-thin">
+
+    <!-- Salutation -->
+    <p class="salutation">Dear Namit,</p>
+
+    <!-- Body -->
+    <p class="body-text drop-cap">
+      There is a peculiar thing that happens when a man from Mumbai, armed with 
+      an Apple computer and three boys in a garage, quietly becomes the architect 
+      of how the entire world experiences story. It does not announce itself. It 
+      builds - one frame at a time, one Oscar at a time, one impossible dream at 
+      a time - until the morning arrives when every filmmaker on earth, from 
+      Lagos to London to Lahore, traces a line from their work back to yours.
+    </p>
+
+    <p class="body-text">
+      That morning is today. And the world would like a word with you.
+    </p>
+
+    <div class="section-marker"><span>What the world said</span></div>
+
+    <!-- Newspaper clippings -->
+    <div class="headline-clipping">
+      <span class="clipping-source">Variety · Awards Edition · 2038</span>
+      <p class="clipping-headline">"The Man Who Made India the Center of World Cinema"</p>
+      <p class="clipping-dek">When DNEG's Ramayana swept every major international award 
+      in 2026, it did not simply win trophies. It rewrote the geography of ambition. 
+      For the first time, the entire planet leaned forward to watch a story that 
+      was born in Mumbai, built in Bangalore, and felt in every human heart.</p>
+    </div>
+
+    <p class="body-text">
+      They said it could not be done. Hollywood had its ecosystem; 
+      Bollywood had its appetite; and between them lay an ocean that no single 
+      company had ever truly bridged. You did not merely bridge it. You dissolved 
+      it - replacing the geography of where great cinema comes from with the 
+      simple, radical proposition that 
+      <span class="em-gold">"if you can dream it, we can do it."</span>
+    </p>
+
+    <div class="clippings-grid">
+      <div class="mini-clipping">
+        <span class="mini-pub">The Hollywood Reporter · 2031</span>
+        <p class="mini-head">DNEG Wins Its 15th Academy Award</p>
+        <p class="mini-body">The studio founded by an Indian entrepreneur has now surpassed every competitor in Oscar history for Visual Effects - a record that seemed unthinkable a decade ago.</p>
+      </div>
+      <div class="mini-clipping">
+        <span class="mini-pub">Financial Times · 2029</span>
+        <p class="mini-head">Prime Focus: The Company That Changed The Rules</p>
+        <p class="mini-body">What began as a post-production shop on Indian soil is now the infrastructure upon which the global entertainment economy runs. Malhotra's empire is not a studio - it is the water the studios swim in.</p>
+      </div>
+      <div class="mini-clipping">
+        <span class="mini-pub">Le Monde · Arts Supplement · 2035</span>
+        <p class="mini-head">"Namit Malhotra a redéfini ce que signifie raconter une histoire"</p>
+        <p class="mini-body">The French Academy of Cinema honoured DNEG for its contribution to European co-productions — films that would not have existed without Malhotra's global architecture of talent and technology.</p>
+      </div>
+      <div class="mini-clipping">
+        <span class="mini-pub">Forbes · The Builders Issue · 2028</span>
+        <p class="mini-head">The $10 Billion Dream: How Namit Malhotra Built the World's Most Powerful Creative Technology Empire</p>
+        <p class="mini-body">In Silicon Valley, they build platforms. In Mumbai, Namit Malhotra built something rarer — an empire where art and engineering are indistinguishable, and where every dollar spent serves a single master: the story.</p>
+      </div>
+    </div>
+
+    <div class="section-marker"><span>The legacy, in their own words</span></div>
+
+    <div class="pull-quote">
+      <blockquote>
+        "Before Namit, we made films in India for India. 
+        After him, we make films in India for humanity."
+      </blockquote>
+      <cite>- Nitesh Tiwari, director, reflecting on Ramayana's global legacy</cite>
+    </div>
+
+    <p class="body-text">
+      The third-generation son of a filmmaking family, you understood what the industry 
+      took decades to learn: that the line between East and West in cinema was 
+      never a wall - it was a door, waiting for someone patient enough to find the handle. 
+      Your grandfather lit the frames of <em>Naya Daur</em>. Your father produced 
+      <em>Shahenshah</em>. And you? You produced the century.
+    </p>
+
+    <div class="headline-clipping">
+      <span class="clipping-source">The Guardian · Culture · 2033</span>
+      <p class="clipping-headline">How One Garage in Mumbai Changed the Visual Language of Film Forever</p>
+      <p class="clipping-dek">The wormhole rendered for Christopher Nolan using Nobel Prize-winning physics. 
+      The desert storms of Arrakis that Denis Villeneuve called 
+      "more real than real." The mythic war of Lanka, recreated at a scale 
+      that left audiences around the world — many of whom had never heard of the 
+      Ramayana — weeping in their seats. All of it traces back to Namit Malhotra's 
+      singular belief: that story is always larger than the screen.</p>
+    </div>
+
+    <p class="body-text">
+      What you built was not merely a company, Namit. You built a 
+      <span class="em-bold">philosophy</span>: that technology is the servant 
+      of story, never its master. That every tool - from the proprietary View-D 
+      rigs that first brought 3D to Bollywood, to the AI-assisted rendering 
+      pipelines that DNEG pioneered in the 2030s - exists for one reason only: 
+      to put a human being inside a dream they could not otherwise enter.
+    </p>
+
+    <div class="pull-quote">
+      <blockquote>
+        "Cinema has always asked one question: can you make them believe?
+        Namit spent his entire life building the answer. 
+        Not just for my films - for all of ours. For all of time."
+      </blockquote>
+      <cite>- Christopher Nolan, upon receiving an Honorary Doctorate from Oxford, 2034</cite>
+    </div>
+
+    <p class="body-text">
+      The numbers speak, of course. Fifteen Academy Awards. A company of more than 
+      fourteen thousand artists across six continents. A catalogue that stretches 
+      from <em>Inception</em>'s folding Paris to <em>Ramayana</em>'s celestial 
+      Pushpak Viman soaring above a global box office that no Indian film had 
+      ever reached. But numbers are only the residue of something larger — a 
+      vision, held quietly and pursued relentlessly, that the stories of every 
+      culture deserve the full power of the world's best technology.
+    </p>
+
+    <div class="section-marker"><span>What the future remembers most</span></div>
+
+    <div class="headline-clipping">
+      <span class="clipping-source">Indian Express · Heritage Edition · 2040</span>
+      <p class="clipping-headline">The Boy from Mumbai Who Gave Indian Stories to the World</p>
+      <p class="clipping-dek">Film historians now speak of two eras in Indian cinema: 
+      before Namit Malhotra, and after. It is not a division of quality. 
+      It is a division of possibility - what Indian filmmakers believed 
+      they were allowed to dream.</p>
+    </div>
+
+    <p class="body-text">
+      And perhaps that is the truest measure of your life's work, Namit — 
+      not the Oscars on the shelf or the headlines in the archive, but 
+      the young filmmaker in Chennai who looked at <em>Ramayana</em> in 2026 
+      and thought, for the first time, 
+      <span class="em-gold">without hesitation</span>: 
+      <em>my story can be the world's story.</em>
+    </p>
+
+    <p class="body-text">
+      The garage in Mumbai did not stay a garage. It became a cathedral - 
+      one built not of stone, but of light, imagination, and the 
+      stubborn, magnificent refusal to accept that India's place in 
+      global cinema was anything less than first.
+    </p>
+
+    <hr class="gold-rule">
+
+    <p class="body-text" style="text-indent: 0;">
+      On this, your birthday, the global entertainment industry - 
+      every studio, every director, every artist whose work you made possible - 
+      offers you not an award. You have those. We offer you something rarer:
+    </p>
+
+    <div class="pull-quote">
+      <blockquote>
+        Our gratitude. Our acknowledgement. And our wonder - 
+        that it was all there, in a garage, from the very beginning.
+      </blockquote>
+    </div>
+
+    <!-- Closing -->
+    <p class="closing-line">With deep admiration and abiding respect,</p>
+
+    <div class="signature-block">
+      <p class="signature-name">The Global Entertainment Industry</p>
+      <p class="signature-title">Hollywood · Bollywood · Cannes · Every Story Ever Told</p>
+    </div>
+
+    <div class="wax-seal-wrap">
+      <div class="wax-seal">
+        <div class="wax-seal-text">NM<br>✦<br>2043</div>
+      </div>
+    </div>
+
+    <p class="footnote">
+      Written with love &nbsp;·&nbsp; A birthday gift &nbsp;·&nbsp; From the future, as he always imagined it
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
